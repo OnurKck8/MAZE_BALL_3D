@@ -16,7 +16,7 @@ public class BallController : MonoBehaviour
     public TextMeshProUGUI time, health, state;
 
 
-    public Button restartBtn;
+    public GameObject restartBtn;
 
     void Start()
     {
@@ -43,8 +43,8 @@ public class BallController : MonoBehaviour
 
         else if (!isWin)
         {
-            state.text = "Game Over";
-            restartBtn.gameObject.SetActive(true);
+            state.text = "Game Over!!!";
+            restartBtn.SetActive(true);
         }
 
     }
@@ -79,7 +79,7 @@ public class BallController : MonoBehaviour
         {
             isWin = true;
             state.text = "Congratulations";
-            restartBtn.gameObject.SetActive(true);
+            restartBtn.SetActive(true);
         }
 
         if(other.gameObject.CompareTag("Wall"))
